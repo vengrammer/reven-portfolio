@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* track (background) */
+::-webkit-scrollbar-track {
+  background: #0f0f0f; /* dark clean track */
+  border-radius: 10px;
+}
+
+/* draggable thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6a5af9, #8e44ad);
+  border-radius: 10px;
+  border: 2px solid #0f0f0f; /* creates padding effect */
+}
+
+/* hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7b6cff, #a055d6);
+}
+
+body {
+  cursor: none;
+}
+
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
