@@ -15,7 +15,6 @@ function App() {
   const projectsRef = useRef<HTMLDivElement | null>(null)
   const techRef = useRef<HTMLDivElement | null>(null)
   const educationRef = useRef<HTMLDivElement | null>(null)
-  const contactRef = useRef<HTMLDivElement | null>(null)
 
   // scroll to section
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
@@ -36,11 +35,8 @@ function App() {
     const projects = projectsRef.current?.offsetTop || 0
     const tech = techRef.current?.offsetTop || 0
     const education = educationRef.current?.offsetTop || 0
-    const contact = contactRef.current?.offsetTop || 0
 
-    if (scrollY >= contact - 150) {
-      setActiveSection("contact")
-    } else if (scrollY >= education - 150) {
+   if (scrollY >= education - 150) {
       setActiveSection("education")
     } else if (scrollY >= tech - 150) {
       setActiveSection("tech")
@@ -95,22 +91,18 @@ function App() {
 
       {/* HEADER */}
       <div className="sticky top-0 z-20 bg-[#0e0f10]">
-        <div className="flex w-full items-center justify-between px-10 py-4">
-
+        <div className="flex w-full items-center gap-19 justify-center px-10 py-4">
           {/* LOGO */}
-          <img src={logo} className="w-10 h-10 rounded-full" />
+          <img src={logo} className="w-10 h-10  rounded-full" />
 
           {/* NAVBAR */}
-          <div className="flex gap-8 opacity-80">
+          <div className="flex gap-8 opacity-80 lg:items-start">
             <NavItem label="About" section="about" refObj={aboutRef} />
             <NavItem label="Experience" section="experience" refObj={experienceRef} />
             <NavItem label="Projects" section="projects" refObj={projectsRef} />
             <NavItem label="Tech Stack" section="tech" refObj={techRef} />
             <NavItem label="Education" section="education" refObj={educationRef} />
-            <NavItem label="Contact" section="contact" refObj={contactRef} />
           </div>
-
-          <div className="text-sm opacity-70">Contact</div>
         </div>
       </div>
 
@@ -131,7 +123,7 @@ function App() {
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeInOut" }}
-        className="min-h-screen flex items-center justify-center "
+        className="min-h-screen flex  "
       >
         <Experience />
       </motion.div>
@@ -146,10 +138,6 @@ function App() {
 
       <div ref={educationRef} className="min-h-screen flex items-center">
         Education Section
-      </div>
-
-      <div ref={contactRef} className="min-h-screen flex items-center">
-        Contact Section
       </div>
     </div>
   )

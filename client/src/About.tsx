@@ -43,7 +43,6 @@ function About() {
               Download CV
             </button>
           </div>
-
         </div>
 
         {/* IMAGE SECTION */}
