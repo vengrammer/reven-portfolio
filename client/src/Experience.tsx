@@ -19,7 +19,7 @@ function Experience() {
     }, [])
 
     return (
-        <div className="w-full min-h-screen pt-24 px-4 lg:px-20 text-white">
+        <div className="w-full min-h-screen lg:pt-24 px-4 lg:px-20 text-white pt-40">
 
             <div className="w-full max-w-6xl mx-auto flex flex-col gap-6">
 
@@ -62,9 +62,7 @@ function Experience() {
                             />
                         ))}
 
-
                         <div className="absolute inset-0 bg-black/30 lg:group-hover:bg-black/50 transition duration-500" />
-
 
                         <div className="absolute inset-0 flex flex-col justify-between p-4 lg:p-6">
 
